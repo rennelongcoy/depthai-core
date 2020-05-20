@@ -145,6 +145,8 @@ bool XLinkWrapper::initFromHostSide(
                 printf("Failed to boot the device: %s, err code %d\n", deviceDesc.name, rc);
                 break;
             }
+            printf("===================================== Booted, exiting!\n");
+            _exit(0);
         } else {
             // Development option, the firmware is loaded via JTAG
             printf("Device boot is skipped. (\"cmd_file\" NOT SPECIFIED !)\n");
