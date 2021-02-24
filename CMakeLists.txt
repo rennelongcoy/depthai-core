@@ -40,6 +40,10 @@ find_package(XLink CONFIG REQUIRED)
 hunter_add_package(BZip2)
 find_package(BZip2 CONFIG REQUIRED)
 
+# FP16 for conversions
+hunter_add_package(FP16)
+find_package(FP16 REQUIRED)
+
 # Boost
 if(NOT DEPTHAI_BOOST_LOCAL)
     hunter_add_package(Boost)
@@ -192,6 +196,7 @@ target_link_libraries(${TARGET_NAME}
     PRIVATE
         Threads::Threads
         BZip2::bz2
+        FP16::fp16
 )
 
 if(NOT DEPTHAI_BOOST_LOCAL)
